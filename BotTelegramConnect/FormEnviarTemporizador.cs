@@ -1,13 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
 using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.Net;
 using System.Windows.Forms;
+using Telegram.Bot;
+using Telegram.Bot.Types.Enums;
 
 namespace BotTelegramConnect
 {
@@ -18,6 +16,9 @@ namespace BotTelegramConnect
         public FormEnviarTemporizador()
         {
             InitializeComponent();
+
+            ServicePointManager.Expect100Continue = true;
+            ServicePointManager.SecurityProtocol = SecurityProtocolType.Tls12;
 
             lstMensagens = new List<string>();
             btnEnviar.Enabled = false;
@@ -48,9 +49,44 @@ namespace BotTelegramConnect
             this.BackColor = Color.Red;
         }
 
-        private void timerControle_Tick(object sender, EventArgs e)
+        private void PararTimerControle()
         {
+            timerControle.Enabled = false;
+            timerControle.Tick -= new EventHandler(timerControle_Tick);
+            this.BackColor = SystemColors.Control;
+            btnEnviar.Enabled = true;
+        }
 
+        private void AtualizarProgressoEnvio()
+        {
+            probarStatusEnvio.Value++;
+            lblStatusEnvio.Text = string.Format("Enviando {0} de {1}...", posicaoEnvio, lstMensagens.Count);
+        }
+
+        private async void timerControle_Tick(object sender, EventArgs e)
+        {
+            try
+            {
+                var telegramBot = new TelegramBotClient("1750215557:AAHpZ7e-XzidrF8JJ8B6_p1qGFBq5jr0GXA");
+                var mensagemAtual = lstMensagens[posicaoEnvio];
+
+                await telegramBot.SendTextMessageAsync(chatId: "1000122498", text: mensagemAtual, parseMode: ParseMode.Markdown);
+
+                posicaoEnvio++;
+
+                // Atualizar progresso de envio
+                AtualizarProgressoEnvio();
+                if (posicaoEnvio == lstMensagens.Count)
+                {
+                    PararTimerControle();
+                }
+
+            }
+            catch (Exception ex)
+            {
+                PararTimerControle();
+                MessageBox.Show("Erro ao enviar mensagem! " + ex.Message, this.Text, MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void btnCarregar_Click(object sender, EventArgs e)
@@ -112,6 +148,14 @@ namespace BotTelegramConnect
             else
             {
                 PrepararEnvio();
+            }
+        }
+
+        private void txtTempo_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsDigit(e.KeyChar) && e.KeyChar != (char)8)
+            {
+                e.Handled = true;
             }
         }
     }

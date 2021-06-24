@@ -115,6 +115,7 @@ namespace BotTelegramConnect
             this.txtTempo.Name = "txtTempo";
             this.txtTempo.Size = new System.Drawing.Size(100, 20);
             this.txtTempo.TabIndex = 7;
+            this.txtTempo.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtTempo_KeyPress);
             // 
             // label3
             // 
