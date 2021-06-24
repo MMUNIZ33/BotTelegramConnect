@@ -36,7 +36,6 @@ namespace BotTelegramConnect
             this.mensagemComImagemToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.imagemWebToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.imagemLocalToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.mensagemComEmojiToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.mensagemToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -64,7 +63,6 @@ namespace BotTelegramConnect
             this.envioToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.mensagemSimplesToolStripMenuItem,
             this.mensagemComImagemToolStripMenuItem,
-            this.mensagemComEmojiToolStripMenuItem,
             this.mensagemToolStripMenuItem});
             this.envioToolStripMenuItem.Name = "envioToolStripMenuItem";
             this.envioToolStripMenuItem.Size = new System.Drawing.Size(48, 20);
@@ -89,22 +87,16 @@ namespace BotTelegramConnect
             // imagemWebToolStripMenuItem
             // 
             this.imagemWebToolStripMenuItem.Name = "imagemWebToolStripMenuItem";
-            this.imagemWebToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.imagemWebToolStripMenuItem.Size = new System.Drawing.Size(149, 22);
             this.imagemWebToolStripMenuItem.Text = "Imagem Web";
             this.imagemWebToolStripMenuItem.Click += new System.EventHandler(this.imagemWebToolStripMenuItem_Click);
             // 
             // imagemLocalToolStripMenuItem
             // 
             this.imagemLocalToolStripMenuItem.Name = "imagemLocalToolStripMenuItem";
-            this.imagemLocalToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.imagemLocalToolStripMenuItem.Size = new System.Drawing.Size(149, 22);
             this.imagemLocalToolStripMenuItem.Text = "Imagem Local";
             this.imagemLocalToolStripMenuItem.Click += new System.EventHandler(this.imagemLocalToolStripMenuItem_Click);
-            // 
-            // mensagemComEmojiToolStripMenuItem
-            // 
-            this.mensagemComEmojiToolStripMenuItem.Name = "mensagemComEmojiToolStripMenuItem";
-            this.mensagemComEmojiToolStripMenuItem.Size = new System.Drawing.Size(235, 22);
-            this.mensagemComEmojiToolStripMenuItem.Text = "Mensagem com Emoji";
             // 
             // mensagemToolStripMenuItem
             // 
@@ -143,7 +135,6 @@ namespace BotTelegramConnect
         private System.Windows.Forms.ToolStripMenuItem mensagemComImagemToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem imagemWebToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem imagemLocalToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem mensagemComEmojiToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem mensagemToolStripMenuItem;
     }
 }
