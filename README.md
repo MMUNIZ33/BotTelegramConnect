@@ -15,5 +15,5 @@
 @Mmuniz072633bot
 
 ``
-Versão beta 1.0
+Versão beta 1.2
 ``
