@@ -7,7 +7,7 @@
 
 - [x] Enviar mensagens simples.
 - [x] Enviar mensagens com imagens web ou local.
-- [ ] Enviar mensagens com temporizador.
+- [x] Enviar mensagens com temporizador.
 
 ## Nome do Bot:
 
@@ -15,5 +15,5 @@
 @Mmuniz072633bot
 
 ``
-Versão beta 1.2
+Versão 1.2
 ``
