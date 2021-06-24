@@ -87,12 +87,6 @@
     <Compile Include="FormPrincipal.Designer.cs">
       <DependentUpon>FormPrincipal.cs</DependentUpon>
     </Compile>
-    <Compile Include="MensagemEmoji.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="MensagemEmoji.Designer.cs">
-      <DependentUpon>MensagemEmoji.cs</DependentUpon>
-    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="EnvioImagemWeb.resx">
@@ -109,9 +103,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormPrincipal.resx">
       <DependentUpon>FormPrincipal.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="MensagemEmoji.resx">
-      <DependentUpon>MensagemEmoji.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
